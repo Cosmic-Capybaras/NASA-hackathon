@@ -1075,6 +1075,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeSlider: {fileID: 676501008}
   timeText: {fileID: 1729881607}
+  speedSlowBtn: {fileID: 701274960}
+  speedNormalBtn: {fileID: 362245435}
+  speedFastBtn: {fileID: 284431711}
+  speedStopBtn: {fileID: 559345370}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,11 +1094,6 @@ MonoBehaviour:
   starObject: {fileID: 2186333084709450264, guid: e510998875301f5408ee888db5d169fe, type: 3}
   hideCategory: 0
   scale: {x: 23, y: 45}
-  speedSlowBtn: {fileID: 701274960}
-  speedNormalBtn: {fileID: 362245435}
-  speedFastBtn: {fileID: 284431711}
-  speedStopBtn: {fileID: 559345370}
-  gameSlider: {fileID: 676501008}
 --- !u!1 &559345368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,11 +1976,11 @@ RectTransform:
   m_Father: {fileID: 1549282214}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -766.51, y: -461.46933}
-  m_SizeDelta: {x: 308.98, y: 79.0613}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 500, y: 79.06131}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1729881607
 MonoBehaviour:
   m_ObjectHideFlags: 0
