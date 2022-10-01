@@ -8,6 +8,7 @@ public class StarScript : MonoBehaviour
 {
     public string starName = "";
     public string category = "";
+    public bool hideCategory = false;
     // brightness list
     public List<float> brightness = new List<float>();
     // Start is called before the first frame update
@@ -46,7 +47,14 @@ public class StarScript : MonoBehaviour
     {
         GameObject description = gameObject.transform.Find("Description").gameObject;
         TextMeshProUGUI descText = description.transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>();
-        descText.text = "Name: " + this.starName + "\nCategory: " + this.category;
+        if (hideCategory)
+        {
+            descText.text = "Name: " + this.starName;
+        }
+        else
+        {
+            descText.text = "Name: " + this.starName + "\nCategory: " + this.category;
+        }
     }
     public void UpdateBrightness(int day)
     {

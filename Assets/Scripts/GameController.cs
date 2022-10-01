@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 public class GameController : MonoBehaviour
 {
     public GameObject starObject;
+    public bool hideCategory = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class GameController : MonoBehaviour
             GameObject star = Instantiate(starObject) as GameObject;
             star.transform.SetParent(GameObject.Find("Canvas").transform, false);
             // set the name and description of the star
+            star.GetComponent<StarScript>().hideCategory = hideCategory;
             star.GetComponent<StarScript>().SetName(name);
             star.GetComponent<StarScript>().SetCategory(category);
             // set the position of the star
