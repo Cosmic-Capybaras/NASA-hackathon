@@ -71,7 +71,11 @@ public class ControlsScript : MonoBehaviour
         // loop through all stars
         foreach (GameObject star in stars)
         {
-            // update the brightness of the star
+            // update the brightness of the star if not colored
+            if (star.GetComponent<Image>().color.r != 1 || star.GetComponent<Image>().color.g != 1 || star.GetComponent<Image>().color.b != 1)
+            {
+                continue;
+            }
             star.GetComponent<StarScript>().UpdateBrightness((int)(starId));
         }
     }
