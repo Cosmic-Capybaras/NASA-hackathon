@@ -19,6 +19,7 @@ public class ControlsScript : MonoBehaviour
     {
         // call SliderUpdate when the slider value changes
         timeSlider.onValueChanged.AddListener(delegate { SliderUpdate(); });
+        timeText.text = dateTimeStart.ToString("dd.MM.yyyy");
     }
 
     // Update is called once per frame
@@ -35,7 +36,6 @@ public class ControlsScript : MonoBehaviour
         long deltaChange = (long)(delta * timeSlider.value);
         long currentTime = start + deltaChange;
         DateTime currentDate = new DateTime(currentTime);
-        Debug.Log(currentDate.ToString("dd.MM.yyyy"));
         timeText.text = currentDate.ToString("dd.MM.yyyy");
     }
 }
