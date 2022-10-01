@@ -10,7 +10,7 @@ public class ControlsScript : MonoBehaviour
     public Slider timeSlider;
     public TextMeshProUGUI timeText;
     public static string startDate = "2019-09-10";
-    public static string endDate = "2019-09-21";
+    public static string endDate = "2019-10-09";
     // convert date to seconds
     DateTime dateTimeStart = DateTime.Parse(startDate);
     DateTime dateTimeEnd = DateTime.Parse(endDate);
@@ -35,7 +35,18 @@ public class ControlsScript : MonoBehaviour
         long delta = end - start;
         long deltaChange = (long)(delta * timeSlider.value);
         long currentTime = start + deltaChange;
+        TimeSpan timeSpan = new TimeSpan(currentTime);
         DateTime currentDate = new DateTime(currentTime);
         timeText.text = currentDate.ToString("dd.MM.yyyy");
+        // convert deltaChange to days
+        int day = (int)(deltaChange / 864000000000);
+        // find all gameobjects with tag "Star"
+        GameObject[] stars = GameObject.FindGameObjectsWithTag("Star");
+        // loop through all stars
+        foreach (GameObject star in stars)
+        {
+            // update the brightness of the star
+            star.GetComponent<StarScript>().UpdateBrightness(day);
+        }
     }
 }
