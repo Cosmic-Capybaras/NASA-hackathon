@@ -10,8 +10,9 @@ public class GameController : MonoBehaviour
     void Start()
     {
         // load json data from file "data.json"
-        string jsonString = System.IO.File.ReadAllText("Assets/data.json");
-        JArray json = JArray.Parse(jsonString);
+        string sciezka = "data";
+        var jsonTextFile = Resources.Load<TextAsset>(sciezka);
+        JArray json = JArray.Parse(jsonTextFile.ToString());
         // loop through all objects in the json array
         foreach (JObject obj in json)
         {

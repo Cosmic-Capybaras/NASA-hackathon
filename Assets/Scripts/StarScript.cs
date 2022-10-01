@@ -27,6 +27,10 @@ public class StarScript : MonoBehaviour
         GameObject description = gameObject.transform.Find("Description").gameObject;
         // toggle visibility
         description.SetActive(!description.activeSelf);
+        // remove onject from parent
+        gameObject.transform.SetParent(null, false);
+        // move object on last place as children of canvas
+        gameObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
     }
     public void SetName(string name)
     {
@@ -42,7 +46,7 @@ public class StarScript : MonoBehaviour
     {
         GameObject description = gameObject.transform.Find("Description").gameObject;
         TextMeshProUGUI descText = description.transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>();
-        descText.text = this.starName + "\n" + this.category;
+        descText.text = "Name: " + this.starName + "\nCategory: " + this.category;
     }
     public void UpdateBrightness(int day)
     {
