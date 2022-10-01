@@ -88,14 +88,6 @@ public class StarScript : MonoBehaviour
             float brightness = this.brightness[day];
             // set the brightness of the star
             gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.1f + ((brightness - min) / (max - min)) * 0.9f);
-            if (this.starName == "V* V1330 Cyg") {
-                print("min: " + min);
-                print("max: " + max);
-                print("mix: " + (max - min));
-                print("bin: " + (brightness - min));
-                print("btig " + brightness);
-                print(this.starName + "with " + (0.1f + ((brightness - min) / (max - min)) * 0.9f));
-            }
         }
     }
 }

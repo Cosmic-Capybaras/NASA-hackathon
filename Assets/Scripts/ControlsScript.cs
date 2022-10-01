@@ -10,7 +10,7 @@ public class ControlsScript : MonoBehaviour
     public Slider timeSlider;
     public TextMeshProUGUI timeText;
     public static string startDate = "2019-09-10";
-    public static string endDate = "2019-10-09";
+    public static string endDate = "2019-10-04";
     // convert date to seconds
     DateTime dateTimeStart = DateTime.Parse(startDate);
     DateTime dateTimeEnd = DateTime.Parse(endDate);
