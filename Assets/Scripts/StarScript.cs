@@ -28,6 +28,17 @@ public class StarScript : MonoBehaviour
         GameObject description = gameObject.transform.Find("Description").gameObject;
         // toggle visibility
         description.SetActive(!description.activeSelf);
+        // if set to visible hide all other descriptions
+        if (description.activeSelf)
+        {
+            foreach (GameObject star in GameObject.FindGameObjectsWithTag("Star"))
+            {
+                if (star != gameObject)
+                {
+                    star.transform.Find("Description").gameObject.SetActive(false);
+                }
+            }
+        }
         // remove onject from parent
         gameObject.transform.SetParent(null, false);
         // move object on last place as children of canvas
