@@ -15,6 +15,14 @@ public class ControlsScript : MonoBehaviour
     public Button speedNormalBtn;
     public Button speedFastBtn;
     public Button speedStopBtn;
+    public Sprite slowImg;
+    public Sprite slowImgPress;
+    public Sprite normalImg;
+    public Sprite normalImgPress;
+    public Sprite fastImg;
+    public Sprite fastImgPress;
+    public Sprite stopImg;
+    public Sprite stopImgPress;
     private float speed = 0f;
     // convert date to seconds
     DateTime dateTimeStart = DateTime.Parse(startDate);
@@ -22,10 +30,10 @@ public class ControlsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speedSlowBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed(2); });
-        speedNormalBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed(5); });
-        speedFastBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed(10); });
-        speedStopBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed(0); });
+        speedSlowBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed("slow"); });
+        speedNormalBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed("medium"); });
+        speedFastBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed("fast"); });
+        speedStopBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed("stop"); });
         // call SliderUpdate when the slider value changes
         timeSlider.onValueChanged.AddListener(delegate { SliderUpdate(); });
         timeText.text = "Day: 0.0";
@@ -67,9 +75,39 @@ public class ControlsScript : MonoBehaviour
             star.GetComponent<StarScript>().UpdateBrightness((int)(starId));
         }
     }
-    void ChangeSpeed(float value)
+    void ChangeSpeed(string speedMode)
     {
-        speed = value;
+        if(speedMode == "slow")
+        {
+            speed = 2f;
+            speedSlowBtn.GetComponent<Image>().sprite = slowImgPress;
+            speedNormalBtn.GetComponent<Image>().sprite = normalImg;
+            speedFastBtn.GetComponent<Image>().sprite = fastImg;
+            speedStopBtn.GetComponent<Image>().sprite = stopImg;
+        }else if (speedMode == "medium")
+        {
+            speed = 5f;
+            speedSlowBtn.GetComponent<Image>().sprite = slowImg;
+            speedNormalBtn.GetComponent<Image>().sprite = normalImgPress;
+            speedFastBtn.GetComponent<Image>().sprite = fastImg;
+            speedStopBtn.GetComponent<Image>().sprite = stopImg;
+        }
+        else if (speedMode == "fast")
+        {
+            speed = 10f;
+            speedSlowBtn.GetComponent<Image>().sprite = slowImg;
+            speedNormalBtn.GetComponent<Image>().sprite = normalImg;
+            speedFastBtn.GetComponent<Image>().sprite = fastImgPress;
+            speedStopBtn.GetComponent<Image>().sprite = stopImg;
+        }
+        else if (speedMode == "stop")
+        {
+            speed = 0f;
+            speedSlowBtn.GetComponent<Image>().sprite = slowImg;
+            speedNormalBtn.GetComponent<Image>().sprite = normalImg;
+            speedFastBtn.GetComponent<Image>().sprite = fastImg;
+            speedStopBtn.GetComponent<Image>().sprite = stopImgPress;
+        }
     }
     IEnumerator AutoPlay()
     {
