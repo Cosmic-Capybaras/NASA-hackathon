@@ -8,7 +8,7 @@ public class MenuButtonsScript : MonoBehaviour, IPointerDownHandler, IPointerUpH
     public Sprite imagePress;
     public Sprite imageRelease;
     public AudioSource pressSound;
-    public AudioSource releaseSound;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,6 @@ public class MenuButtonsScript : MonoBehaviour, IPointerDownHandler, IPointerUpH
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
     {
         gameObject.GetComponent<Image>().sprite = imageRelease;
-        releaseSound.Play();
+       
     }
 }
