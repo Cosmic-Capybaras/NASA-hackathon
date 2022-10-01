@@ -6,8 +6,8 @@ using TMPro;
 
 public class StarScript : MonoBehaviour
 {
-    public string starName;
-    public string description;
+    public string starName = "";
+    public string category = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +31,15 @@ public class StarScript : MonoBehaviour
         this.starName = name;
         UpdateDescription();
     }
-    public void SetDescription(string description)
+    public void SetCategory(string category)
     {
-        this.description = description;
+        this.category = category;
         UpdateDescription();
     }
     void UpdateDescription()
     {
         GameObject description = gameObject.transform.Find("Description").gameObject;
-        TextMeshProUGUI descText = description.GetComponent<TextMeshProUGUI>();
-        descText.text = name + "\n" + description;
+        TextMeshProUGUI descText = description.transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>();
+        descText.text = this.starName + "\n" + this.category;
     }
 }
