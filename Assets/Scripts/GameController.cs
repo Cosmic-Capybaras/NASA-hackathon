@@ -30,7 +30,13 @@ public class GameController : MonoBehaviour
             star.GetComponent<StarScript>().SetCategory(category);
             // set the position of the star
             star.transform.position = new Vector3(x*40, y*10, 0);
-            
+            // loop every brightness
+            foreach (float brightness in obj["brightness"])
+            {
+                // add the brightness value to the star
+                star.GetComponent<StarScript>().brightness.Add(brightness);
+            }
+            star.GetComponent<StarScript>().UpdateBrightness(0);
         }
 
     }
