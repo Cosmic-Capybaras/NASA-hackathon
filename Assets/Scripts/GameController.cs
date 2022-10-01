@@ -7,6 +7,8 @@ public class GameController : MonoBehaviour
 {
     public GameObject starObject;
     public bool hideCategory = false;
+    public Vector2 scale;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,13 @@ public class GameController : MonoBehaviour
             float y = (float)obj["position"][0]["y"];
             // create a new star as child of canvas
             GameObject star = Instantiate(starObject) as GameObject;
-            star.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            star.transform.SetParent(GameObject.Find("Rot").transform, false);
             // set the name and description of the star
             star.GetComponent<StarScript>().hideCategory = hideCategory;
             star.GetComponent<StarScript>().SetName(name);
             star.GetComponent<StarScript>().SetCategory(category);
             // set the position of the star
-            star.transform.position = new Vector3(x*40, y*10, 0);
+            star.transform.localPosition = new Vector3(x* scale.x, y*scale.y, 0);
             // loop every brightness
             foreach (float brightness in obj["brightness"])
             {

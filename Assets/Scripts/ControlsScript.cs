@@ -53,7 +53,7 @@ public class ControlsScript : MonoBehaviour
         foreach (GameObject star in stars)
         {
             // update the brightness of the star
-            star.GetComponent<StarScript>().UpdateBrightness((int)(starId/4)); // temp /4 bo brak danych
+            star.GetComponent<StarScript>().UpdateBrightness((int)(starId)); // temp /4 bo brak danych
         }
     }
 }

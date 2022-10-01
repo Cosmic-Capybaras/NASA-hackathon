@@ -42,7 +42,7 @@ public class StarScript : MonoBehaviour
         // remove onject from parent
         gameObject.transform.SetParent(null, false);
         // move object on last place as children of canvas
-        gameObject.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        gameObject.transform.SetParent(GameObject.Find("Rot").transform, false);
     }
     public void SetName(string name)
     {
@@ -71,9 +71,31 @@ public class StarScript : MonoBehaviour
     {
         {
             // get the brightness value for the current day
+            float min = Mathf.Infinity;
+            float max = 0;
+            for(int i = 0; i < this.brightness.Count; i++)
+            {
+                if (this.brightness[i] > max)
+                {
+                    max = this.brightness[i];
+                }
+                if (this.brightness[i] < min)
+                {
+                    min = this.brightness[i];
+                }
+            }
+            //print(this.starName + "with " + "max: " + max + "min: " + min);
             float brightness = this.brightness[day];
             // set the brightness of the star
-            gameObject.GetComponent<Image>().color = new Color(1, 1, 1, brightness/100);
+            gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 0.1f + ((brightness - min) / (max - min)) * 0.9f);
+            if (this.starName == "V* V1330 Cyg") {
+                print("min: " + min);
+                print("max: " + max);
+                print("mix: " + (max - min));
+                print("bin: " + (brightness - min));
+                print("btig " + brightness);
+                print(this.starName + "with " + (0.1f + ((brightness - min) / (max - min)) * 0.9f));
+            }
         }
     }
 }
