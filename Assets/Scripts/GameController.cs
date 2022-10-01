@@ -10,8 +10,9 @@ public class GameController : MonoBehaviour
     void Start()
     {
         // load json data from file "data.json"
-        string jsonString = System.IO.File.ReadAllText("Assets/data.json");
-        JArray json = JArray.Parse(jsonString);
+        string sciezka = "data";
+        var jsonTextFile = Resources.Load<TextAsset>(sciezka);
+        JArray json = JArray.Parse(jsonTextFile.ToString());
         // loop through all objects in the json array
         foreach (JObject obj in json)
         {
@@ -30,7 +31,13 @@ public class GameController : MonoBehaviour
             star.GetComponent<StarScript>().SetCategory(category);
             // set the position of the star
             star.transform.position = new Vector3(x*40, y*10, 0);
-            
+            // loop every brightness
+            foreach (float brightness in obj["brightness"])
+            {
+                // add the brightness value to the star
+                star.GetComponent<StarScript>().brightness.Add(brightness);
+            }
+            star.GetComponent<StarScript>().UpdateBrightness(0);
         }
 
     }
