@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json.Linq;
 
-public class DuelBrainScript : MonoBehaviour
+public class BotBrainScript : MonoBehaviour
 {
     public TextMeshProUGUI timeText;
     public GameObject starObject;
@@ -16,17 +16,14 @@ public class DuelBrainScript : MonoBehaviour
     public Button categoryChemically;
     private int startTime;
     public Vector2 scale;
-    public bool countTime = false;
-    public GameObject panel;
-    public Button start;
-    public TextMeshProUGUI player;
-    private int player1Correct = 0;
-    private int player2Correct = 0;
-    private int correct = 0;
-    private int player1Time = 0;
-    private int player2Time = 0;
-    public GameObject score;
-    public TextMeshProUGUI scoreText;
+    public bool countTime = true;
+    public Image opponentStar1;
+    public Image opponentStar2;
+    public Image opponentStar3;
+    public Image opponentStar4;
+    public Image opponentStar5;
+    // opponent stars list
+    List<Image> opponentStars = new List<Image>();
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +34,12 @@ public class DuelBrainScript : MonoBehaviour
         categoryCepheid.GetComponent<Button>().onClick.AddListener(() => { GuessStar("Cepheid"); });
         categoryBinary.GetComponent<Button>().onClick.AddListener(() => { GuessStar("Binary"); });
         categoryChemically.GetComponent<Button>().onClick.AddListener(() => { GuessStar("Chemically Peculiar"); });
-        start.GetComponent<Button>().onClick.AddListener(() => { StartPress(); });
+        opponentStars.Add(opponentStar1);
+        opponentStars.Add(opponentStar2);
+        opponentStars.Add(opponentStar3);
+        opponentStars.Add(opponentStar4);
+        opponentStars.Add(opponentStar5);
+        StartCoroutine(OpponentBrain());
     }
 
     // Update is called once per frame
@@ -124,7 +126,6 @@ public class DuelBrainScript : MonoBehaviour
         {
             // set star color to green
             selectedStar.GetComponent<Image>().color = new Color(0, 1, 0);
-            correct++;
         }
         else
         {
@@ -144,41 +145,35 @@ public class DuelBrainScript : MonoBehaviour
             }
         }
         countTime = false;
-        
-        if(player1Time == 0)
-        {
-            player1Time = (int)(Time.time * 1000) - startTime;
-            player1Correct = correct;
-            player.text = "PLAYER 2";
-            panel.SetActive(true);
-            foreach (GameObject star in GameObject.FindGameObjectsWithTag("Star"))
-            {
-                star.GetComponent<StarScript>().UpdateBrightness(0);
-                star.transform.Find("Description").gameObject.SetActive(false);
-            }
-        }
-        else
-        {
-            player2Time = (int)(Time.time * 1000) - startTime;
-            player2Correct = correct;
-            score.SetActive(true);
-            // convert time to minutes and seconds
-            int minutes1 = player1Time / 60000;
-            int seconds1 = (player1Time % 60000) / 1000;
-            string time1 = minutes1.ToString("00") + ":" + seconds1.ToString("00") + "." + (player1Time % 1000).ToString("000");
-            int minutes2 = player2Time / 60000;
-            int seconds2 = (player2Time % 60000) / 1000;
-            string time2 = minutes2.ToString("00") + ":" + seconds2.ToString("00") + "." + (player2Time % 1000).ToString("000");
-            scoreText.text = "Player 1: " + player1Correct + "/5 - " + time1 + "\nPlayer 2: " + player2Correct + "/5 - " + time2;
-        }
-        
     }
-    
-    void StartPress()
+    IEnumerator OpponentBrain()
     {
-        correct = 0;
-        startTime = (int)Time.time * 1000;
-        panel.SetActive(false);
-        countTime = true;
+        // wait between 3 and 10 seconds
+        yield return new WaitForSeconds(Random.Range(3, 11));
+        // list of stars guessed
+        List<int> starsGuessed = new List<int>();
+        // loop five times
+        for (int i = 0; i < 5; i++)
+        {
+            // select random not guessed star
+            int rand = Random.Range(0, 5);
+            while (starsGuessed.Contains(rand))
+            {
+                rand = Random.Range(0, 5);
+            }
+            starsGuessed.Add(rand);
+            // select randomly if it will be guessed
+            int guessed = Random.Range(0, 3);
+            if(guessed == 0)
+            {
+                opponentStars[rand].GetComponent<Image>().color = new Color(1, 0, 0);
+            }
+            else
+            {
+                opponentStars[rand].GetComponent<Image>().color = new Color(0, 1, 0);
+            }
+            // wait between 2 and 4 seconds
+            yield return new WaitForSeconds(Random.Range(2, 5));
+        }
     }
 }
