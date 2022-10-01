@@ -1114,7 +1114,6 @@ GameObject:
   - component: {fileID: 824682560}
   - component: {fileID: 824682563}
   - component: {fileID: 824682564}
-  - component: {fileID: 824682565}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1201,6 +1200,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1934798132}
+  starObject: {fileID: 2186333084709450264, guid: e510998875301f5408ee888db5d169fe, type: 3}
+  category1btn: {fileID: 0}
+  category2btn: {fileID: 0}
+  category3btn: {fileID: 0}
+  category4btn: {fileID: 0}
+  category5btn: {fileID: 0}
+  category6btn: {fileID: 0}
+  category7btn: {fileID: 0}
+  category8btn: {fileID: 0}
 --- !u!114 &824682564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,20 +1223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeSlider: {fileID: 1828785054}
   timeText: {fileID: 1622885441}
---- !u!114 &824682565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824682559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6cd6ebcd89764459b46f6be5529315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starObject: {fileID: 2186333084709450264, guid: e510998875301f5408ee888db5d169fe, type: 3}
-  hideCategory: 1
 --- !u!1 &900887943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +2230,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 300}
-  m_SizeDelta: {x: 308.97998, y: 79.06131}
+  m_SizeDelta: {x: 500, y: 79.06131}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1622885441
 MonoBehaviour:

@@ -19,7 +19,7 @@ public class ControlsScript : MonoBehaviour
     {
         // call SliderUpdate when the slider value changes
         timeSlider.onValueChanged.AddListener(delegate { SliderUpdate(); });
-        timeText.text = dateTimeStart.ToString("dd.MM.yyyy");
+        timeText.text = "00:00 " + dateTimeStart.ToString("dd.MM.yyyy");
     }
 
     // Update is called once per frame
@@ -37,16 +37,23 @@ public class ControlsScript : MonoBehaviour
         long currentTime = start + deltaChange;
         TimeSpan timeSpan = new TimeSpan(currentTime);
         DateTime currentDate = new DateTime(currentTime);
-        timeText.text = currentDate.ToString("dd.MM.yyyy");
         // convert deltaChange to days
-        int day = (int)(deltaChange / 864000000000);
+        float day = ((float)deltaChange / 864000000000);
+        float hours = day % 1;
+        day = (int)day;
+        if (hours <= 0.25) hours = 0f;
+        else if (hours <= 0.5) hours = 0.25f;
+        else if (hours <= 0.75) hours = 0.5f;
+        else hours = 0.75f;
+        int starId = (int)(day * 4 + hours * 4);
+        timeText.text = ((int)(hours*24)).ToString("00") + ":00 " + currentDate.ToString("dd.MM.yyyy");
         // find all gameobjects with tag "Star"
         GameObject[] stars = GameObject.FindGameObjectsWithTag("Star");
         // loop through all stars
         foreach (GameObject star in stars)
         {
             // update the brightness of the star
-            star.GetComponent<StarScript>().UpdateBrightness(day);
+            star.GetComponent<StarScript>().UpdateBrightness((int)(starId/4)); // temp /4 bo brak danych
         }
     }
 }
