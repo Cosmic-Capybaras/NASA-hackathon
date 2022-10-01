@@ -36,7 +36,7 @@ public class ControlsScript : MonoBehaviour
         speedStopBtn.GetComponent<Button>().onClick.AddListener(() => { ChangeSpeed("stop"); });
         // call SliderUpdate when the slider value changes
         timeSlider.onValueChanged.AddListener(delegate { SliderUpdate(); });
-        timeText.text = "Day: 0.0";
+        timeText.text = "Day:   0.0";
         StartCoroutine(AutoPlay());
     }
 
@@ -65,7 +65,7 @@ public class ControlsScript : MonoBehaviour
         else hours = 0.75f;
         int starId = (int)(day * 4 + hours * 4);
         //timeText.text = ((int)(hours*24)).ToString("00") + ":00 " + currentDate.ToString("dd.MM.yyyy");
-        timeText.text = "Day: " + day + "."+(int)(hours*100);
+        timeText.text = "Day:   " + day + "."+(int)(hours*100);
         // find all gameobjects with tag "Star"
         GameObject[] stars = GameObject.FindGameObjectsWithTag("Star");
         // loop through all stars
