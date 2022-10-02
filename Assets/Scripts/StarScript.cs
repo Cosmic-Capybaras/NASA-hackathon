@@ -60,11 +60,11 @@ public class StarScript : MonoBehaviour
         TextMeshProUGUI descText = description.transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>();
         if (hideCategory)
         {
-            descText.text = "Name: " + this.starName;
+            descText.text = "Name: \n" + this.starName;
         }
         else
         {
-            descText.text = "Name: " + this.starName + "\nCategory: " + this.category;
+            descText.text = "Name: \n" + this.starName + "\n\nCategory: \n" + this.category;
         }
     }
     public void UpdateBrightness(int day)
