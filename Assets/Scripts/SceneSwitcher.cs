@@ -46,13 +46,13 @@ public class SceneSwitcher : MonoBehaviour
 
     public void backFromSample()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene("menu-mods");
 
     }
 
     public void backFromGues()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("menu-mods");
 
     }
 
