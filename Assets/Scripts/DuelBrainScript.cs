@@ -55,7 +55,7 @@ public class DuelBrainScript : MonoBehaviour
         int minutes = time / 60000;
         int seconds = (time % 60000) / 1000;
         // update time text
-        timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + "." + (time % 1000).ToString("000");
+        timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + "." + Mathf.Round((time % 1000) / 100);
     }
     private void GenerateStars(int amount)
     {
