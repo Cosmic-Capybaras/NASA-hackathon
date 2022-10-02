@@ -1549,6 +1549,9 @@ MonoBehaviour:
   categoryChemically: {fileID: 1687330537}
   scale: {x: 23, y: 45}
   countTime: 1
+  good: {fileID: 8300000, guid: 120a60cf66413264caca63a892c41355, type: 3}
+  bad: {fileID: 8300000, guid: 2eea92a21a9fd0f47954121c5ad8a09e, type: 3}
+  audioSource: {fileID: 5002202}
 --- !u!114 &824682564
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -433,6 +433,9 @@ MonoBehaviour:
   player: {fileID: 1943755046}
   score: {fileID: 884535409}
   scoreText: {fileID: 4962287}
+  good: {fileID: 8300000, guid: 120a60cf66413264caca63a892c41355, type: 3}
+  bad: {fileID: 8300000, guid: 2eea92a21a9fd0f47954121c5ad8a09e, type: 3}
+  audioSource: {fileID: 424768390}
 --- !u!1 &232417718
 GameObject:
   m_ObjectHideFlags: 0

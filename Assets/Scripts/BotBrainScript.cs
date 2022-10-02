@@ -25,6 +25,11 @@ public class BotBrainScript : MonoBehaviour
     // opponent stars list
     List<Image> opponentStars = new List<Image>();
     // Start is called before the first frame update
+
+    public AudioClip good;
+    public AudioClip bad;
+    public AudioSource audioSource;
+
     void Start()
     {
         startTime = (int)Time.time * 1000;
@@ -126,11 +131,13 @@ public class BotBrainScript : MonoBehaviour
         {
             // set star color to green
             selectedStar.GetComponent<Image>().color = new Color(0, 1, 0);
+            audioSource.PlayOneShot(good, 0.5f);
         }
         else
         {
             // set star color to red
             selectedStar.GetComponent<Image>().color = new Color(1, 0, 0);
+            audioSource.PlayOneShot(bad, 0.75f);
         }
         // check if there is any white star
         foreach (GameObject star in GameObject.FindGameObjectsWithTag("Star"))

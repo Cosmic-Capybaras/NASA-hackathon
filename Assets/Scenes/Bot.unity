@@ -420,6 +420,9 @@ MonoBehaviour:
   opponentStar3: {fileID: 702026588}
   opponentStar4: {fileID: 1982111585}
   opponentStar5: {fileID: 314501089}
+  good: {fileID: 8300000, guid: 120a60cf66413264caca63a892c41355, type: 3}
+  bad: {fileID: 8300000, guid: 2eea92a21a9fd0f47954121c5ad8a09e, type: 3}
+  audioSource: {fileID: 424768390}
 --- !u!1 &214810243
 GameObject:
   m_ObjectHideFlags: 0

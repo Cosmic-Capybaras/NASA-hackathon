@@ -17,6 +17,11 @@ public class GuessBrainScript : MonoBehaviour
     private int startTime;
     public Vector2 scale;
     public bool countTime = true;
+
+    public AudioClip good;
+    public AudioClip bad;
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,11 +118,13 @@ public class GuessBrainScript : MonoBehaviour
         {
             // set star color to green
             selectedStar.GetComponent<Image>().color = new Color(0, 1, 0);
+            audioSource.PlayOneShot(good, 0.5f);
         }
         else
         {
             // set star color to red
             selectedStar.GetComponent<Image>().color = new Color(1, 0, 0);
+            audioSource.PlayOneShot(bad, 0.75f);
         }
         // check if there is any white star
         foreach (GameObject star in GameObject.FindGameObjectsWithTag("Star"))
