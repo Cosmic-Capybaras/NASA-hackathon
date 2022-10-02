@@ -158,7 +158,7 @@ public class DuelBrainScript : MonoBehaviour
         {
             player1Time = (int)(Time.time * 1000) - startTime;
             player1Correct = correct;
-            player.text = "PLAYER 2";
+            player.text = "PLAYER     2";
             StartCoroutine(Round2());
         }
         else
@@ -201,7 +201,7 @@ public class DuelBrainScript : MonoBehaviour
         int minutes2 = player2Time / 60000;
         int seconds2 = (player2Time % 60000) / 1000;
         string time2 = minutes2.ToString("00") + ":" + seconds2.ToString("00") + "." + (player2Time % 1000).ToString("000");
-        scoreText.text = "Player 1: " + player1Correct + "/5 - " + time1 + "\nPlayer 2: " + player2Correct + "/5 - " + time2;
+        scoreText.text = "Player     1:     " + player1Correct + "/5     - " + time1 + "\nPlayer     2:     " + player2Correct + "/5     - " + time2;
 
     }
 }
