@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChangeDescription : MonoBehaviour
 {
@@ -29,6 +30,10 @@ public class ChangeDescription : MonoBehaviour
         image.sprite = sprite;
         name.text = name_this;
         description.text = description_this;
+    }
+    public void Return()
+    {
+        SceneManager.LoadScene("menu-mein");
     }
 
 }
