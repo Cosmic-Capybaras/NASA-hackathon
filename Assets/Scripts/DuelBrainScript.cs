@@ -27,7 +27,8 @@ public class DuelBrainScript : MonoBehaviour
     private int player1Time = 0;
     private int player2Time = 0;
     public GameObject score;
-    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI scoreText1;
+    public TextMeshProUGUI scoreText2;
 
 
     public AudioClip good;
@@ -201,7 +202,7 @@ public class DuelBrainScript : MonoBehaviour
         int minutes2 = player2Time / 60000;
         int seconds2 = (player2Time % 60000) / 1000;
         string time2 = minutes2.ToString("00") + ":" + seconds2.ToString("00") + "." + (player2Time % 1000).ToString("000");
-        scoreText.text = "Player     1:     " + player1Correct + "/5     - " + time1 + "\nPlayer     2:     " + player2Correct + "/5     - " + time2;
-
+        scoreText1.text = "Player     1:\n" + player1Correct + "/5\n" + time1;
+        scoreText2.text = "Player     2:\n" + player2Correct + "/5\n" + time2;
     }
 }
