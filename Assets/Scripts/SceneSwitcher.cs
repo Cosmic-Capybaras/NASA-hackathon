@@ -53,7 +53,11 @@ public class SceneSwitcher : MonoBehaviour
     public void backFromGues()
     {
         SceneManager.LoadScene("menu-mods");
+    }
 
+    public void openLibrary()
+    {
+        SceneManager.LoadScene("library");
     }
 
 }

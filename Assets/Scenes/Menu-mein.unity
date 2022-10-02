@@ -670,7 +670,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2.3, y: -2.4}
-  m_SizeDelta: {x: 77.3488, y: 27.1994}
+  m_SizeDelta: {x: 78.64, y: 27.1994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693933881
 MonoBehaviour:
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EXIT
+  m_text: LIBRARY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9231c7e77f956d24991b2b802da33ed8, type: 2}
   m_sharedMaterial: {fileID: -3049571641405915607, guid: 9231c7e77f956d24991b2b802da33ed8, type: 2}
@@ -1219,7 +1219,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4901910}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: quitGame
+        m_MethodName: openLibrary
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
