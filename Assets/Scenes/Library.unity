@@ -273,9 +273,16 @@ MonoBehaviour:
   name: {fileID: 2003535020}
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
-  name_this: 
-  description_this: 
-  sprite: {fileID: 0}
+  name_this: Cepheid
+  description_this: "Cepheids (or Cepheid Variables) are stars that pulsate periodically,
+    which means that their brightness changes with a fixed period and amplitude.
+    This type of stars is quite common. They are used by astronomers as indicators
+    of distance from other galaxies. Once a cepheid is located, it is necessary to
+    observe its pulsation period. Then, the brightness of the star can be easily
+    defined, as the brightness is a uniform function of a cepheid\u2019s period.
+    Distance to the star can be determined by comparing the star\u2019s known luminosity
+    to its observed brightness."
+  sprite: {fileID: 21300000, guid: a9255b713d50a45439d766abe8ec99d0, type: 3}
   first: 0
 --- !u!1 &53872380
 GameObject:
@@ -404,6 +411,170 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53872380}
   m_CullTransparentMesh: 1
+--- !u!1 &93883170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93883171}
+  m_Layer: 5
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &93883171
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93883170}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 889283315}
+  m_Father: {fileID: 286114716}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &286114715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286114716}
+  - component: {fileID: 286114719}
+  - component: {fileID: 286114718}
+  - component: {fileID: 286114717}
+  m_Layer: 5
+  m_Name: Scrollbar Horizontal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &286114716
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286114715}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 93883171}
+  m_Father: {fileID: 1017138409}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 20}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &286114717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286114715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 889283316}
+  m_HandleRect: {fileID: 889283315}
+  m_Direction: 0
+  m_Value: 0
+  m_Size: 1
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &286114718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286114715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &286114719
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286114715}
+  m_CullTransparentMesh: 1
 --- !u!1 &296930417
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,9 +668,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1380096161}
-  - {fileID: 1265082911}
-  - {fileID: 2003535019}
-  - {fileID: 1329004580}
+  - {fileID: 1017138409}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -658,9 +827,22 @@ MonoBehaviour:
   name: {fileID: 2003535020}
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
-  name_this: 
-  description_this: 
-  sprite: {fileID: 0}
+  name_this: Chemically Peculiar Star
+  description_this: "Chemically peculiar stars are characterised by unusually abundant
+    metal types present in their surface layers. What is interesting, chemically
+    peculiar stars\u2019 magnetic fields show no time dependence, as opposed to those
+    of late-type stars. \r\n\nChemically peculiar stars are common among hot, hydrogen-burning
+    stars. There are four categories of them:\r\n\n1 \u2013 non-magnetic metallic-lined:
+    stars of this type show high abundancies of heavy metals, and their rotation
+    speed is rather slow;\r\n2 \u2013 magnetic: these stars have a strong magnetic
+    field, and show high abundancies of elements such as Si, Cr, Sr and Eu; they
+    are slow rotators as well;\r\n3 \u2013 non-magnetic mercury-manganese: these
+    stars show high abundancies of elements such as Hg and Mn; they have weaker magnetic
+    fields than the previous type;\r\n4 \u2013 helium-weak: as the name suggests,
+    these stars show low contents of helium in their surface layers.\r\nUnfortunately,
+    the light curves are not sufficient for correct detection of chemically peculiar
+    stars. \r"
+  sprite: {fileID: 21300000, guid: adaab5066fbd78445817f2738595b5a2, type: 3}
   first: 0
 --- !u!1 &377195426
 GameObject:
@@ -812,9 +994,14 @@ MonoBehaviour:
   name: {fileID: 2003535020}
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
-  name_this: 
-  description_this: 
-  sprite: {fileID: 0}
+  name_this: Delta Scouti Variable
+  description_this: "Delta Scuti Variables are sometimes called \u201Cdwarf cepheids\u201D,
+    as they are helpful indicators for determining the distance to other galaxies
+    (or star clusters). The relation between the star\u2019s period and its luminosity
+    is fixed in certain passbands (just like in case of classical cepheids). What
+    makes them different from cepheids is shorter pulsation periods, smaller masses
+    and magnitude (they are much more faint)."
+  sprite: {fileID: 21300000, guid: 2edd90803644c9e4490823984f1f9a52, type: 3}
   first: 0
 --- !u!1 &390273203
 GameObject:
@@ -967,13 +1154,19 @@ MonoBehaviour:
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
   name_this: Cataclysmic       (binary)
-  description_this: "Cataclysmic binary stars are stars which brightness increases
-    rapidly and irregularly. After the sudden increase, the brightness drops back
-    down to a stable level. \r\n\nThese stars consist of two components: a white
-    dwarf primary, and a secondary donor star. The distance between them is so small
-    that the white dwarf\u2019s gravity affects the other star, and the transfer
-    of hydrogen-rich matter to the dwarf\u2019s surface becomes possible. This process
-    is called \u201Cmatter accretion\u201D. \r"
+  description_this: "Please note: cataclysmic binary stars is a wider term than (classical)
+    novae.\r\n\nCataclysmic binary stars are stars which brightness increases rapidly
+    and irregularly. After the sudden increase, the brightness drops back down to
+    a stable level. \r\n\nThese stars consist of two components: a white dwarf primary,
+    and a secondary donor star. The distance between them is so small that the white
+    dwarf\u2019s gravity affects the other star, and the transfer of hydrogen-rich
+    matter to the dwarf\u2019s surface becomes possible. This process is called \u201Cmatter
+    accretion\u201D. \r\n\nThere are several categories of cataclysmic variables,
+    depending on the outbursts\u2019 magnitudes and frequency (they may reoccur or
+    happen only once). For example, Recurrent novae\u2019s outbursts repeat every
+    10 to 80 years, and the outbursts of the classical novae can be observed only
+    once. Example categories of this type of stars are: supernovae, novae, recurrent
+    novae, dwarf novae, luminous red novae.\r\n"
   sprite: {fileID: 21300000, guid: f753ab19c3eeb744685221dbecaf6278, type: 3}
   first: 1
 --- !u!1 &412222564
@@ -1102,6 +1295,133 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412222564}
+  m_CullTransparentMesh: 1
+--- !u!1 &436804573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436804574}
+  - component: {fileID: 436804577}
+  - component: {fileID: 436804576}
+  - component: {fileID: 436804575}
+  m_Layer: 5
+  m_Name: Scrollbar Vertical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &436804574
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436804573}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1854882260}
+  m_Father: {fileID: 1017138409}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 0}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &436804575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436804573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1402762936}
+  m_HandleRect: {fileID: 1402762935}
+  m_Direction: 2
+  m_Value: 1
+  m_Size: 0.56838447
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &436804576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436804573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &436804577
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436804573}
   m_CullTransparentMesh: 1
 --- !u!1 &528396839
 GameObject:
@@ -1380,7 +1700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: delta Sct Variable
+  m_text: Delta Scouti Variable
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9231c7e77f956d24991b2b802da33ed8, type: 2}
   m_sharedMaterial: {fileID: -3049571641405915607, guid: 9231c7e77f956d24991b2b802da33ed8, type: 2}
@@ -1761,9 +2081,15 @@ MonoBehaviour:
   name: {fileID: 2003535020}
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
-  name_this: 
-  description_this: 
-  sprite: {fileID: 0}
+  name_this: BY Draconis
+  description_this: "BY Draconis variables are variable stars of late spectral types
+    (usually K or M), showing quasiperiodic light changes with periods from a fraction
+    of a day to 120 days and amplitudes from several hundredths to 0.5 magnitude
+    in V. The variability in emitted light is caused by the star\u2019s rotation
+    and starspots (stellar phenomena, named by analogy with sunspots \u2013 temporary
+    spots on the Sun\u2019s surface, which appear much darker than other areas),
+    as well as other chromospheric activity."
+  sprite: {fileID: 21300000, guid: 61eb5101dffdcda4dafe2e6f77e95a32, type: 3}
   first: 0
 --- !u!1 &773542110
 GameObject:
@@ -2050,10 +2376,86 @@ MonoBehaviour:
   name: {fileID: 2003535020}
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
-  name_this: 
+  name_this: Binary
   description_this: 
   sprite: {fileID: 0}
   first: 0
+--- !u!1 &889283314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889283315}
+  - component: {fileID: 889283317}
+  - component: {fileID: 889283316}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &889283315
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889283314}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 93883171}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &889283316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889283314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &889283317
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889283314}
+  m_CullTransparentMesh: 1
 --- !u!1 &953902770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2719,116 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009161545}
   m_CullTransparentMesh: 1
+--- !u!1 &1017138408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1017138409}
+  - component: {fileID: 1017138412}
+  - component: {fileID: 1017138411}
+  - component: {fileID: 1017138410}
+  m_Layer: 5
+  m_Name: Scroll View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1017138409
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017138408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2099255798}
+  - {fileID: 286114716}
+  - {fileID: 436804574}
+  m_Father: {fileID: 296930421}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 360, y: 0}
+  m_SizeDelta: {x: 1200, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1017138410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017138408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 1124660629}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 2099255798}
+  m_HorizontalScrollbar: {fileID: 286114717}
+  m_VerticalScrollbar: {fileID: 436804575}
+  m_HorizontalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 2
+  m_HorizontalScrollbarSpacing: -3
+  m_VerticalScrollbarSpacing: -3
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1017138411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017138408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1017138412
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017138408}
+  m_CullTransparentMesh: 1
 --- !u!1 &1031891530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,6 +2964,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031891530}
   m_CullTransparentMesh: 1
+--- !u!1 &1124660628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124660629}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1124660629
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124660628}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2003535019}
+  - {fileID: 1329004580}
+  - {fileID: 1265082911}
+  m_Father: {fileID: 2099255798}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 1870.2129}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &1231572505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,9 +3153,21 @@ MonoBehaviour:
   name: {fileID: 2003535020}
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
-  name_this: 
-  description_this: 
-  sprite: {fileID: 0}
+  name_this: Eclipsing Binary
+  description_this: "A binary system consists of two stars orbiting around their
+    centre of mass. To the naked eye, binary stars appear as a single object in the
+    night sky. However, the separation of the system\u2019s components is possible
+    with the use of a telescope, or by analysing its light curves. \n\nEclipsing
+    binary stars orbit in a plane containing the observer\u2019s line of sight, and
+    eclipse each other. This, in turn, causes the observed brightness to vary, affecting
+    the light curves. Once an eclipse occurs, the brightness suddenly decreases.
+    The light curve\u2019s appearance may vary, depending on the two stars\u2019
+    size and distance between them. \r\n\nBy analysing the light curve above, one
+    can see that an eclipse may occur twice during one orbit - once when the secondary
+    star passes in front of the primary and once when the primary star passes in
+    front of the secondary (deep drop in brightness = primary eclipse, shallow drop
+    in brightness = secondary eclipse) ."
+  sprite: {fileID: 21300000, guid: 163eb5d8e8702c1458b4239a243ddf9f, type: 3}
   first: 0
 --- !u!1 &1260274812
 GameObject:
@@ -2785,18 +3348,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265082910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1278295726}
-  m_Father: {fileID: 296930421}
-  m_RootOrder: 1
+  m_Father: {fileID: 1124660629}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 379, y: -318}
+  m_AnchoredPosition: {x: 0.0068359375, y: 572}
   m_SizeDelta: {x: 256, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265082912
@@ -2938,17 +3501,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329004579}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 296930421}
-  m_RootOrder: 3
+  m_Father: {fileID: 1124660629}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 379, y: 327}
+  m_AnchoredPosition: {x: 27.5, y: 283}
   m_SizeDelta: {x: 1048.0549, y: 120.3196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329004581
@@ -2971,13 +3534,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cataclysmic binary stars are stars which brightness increases rapidly
+  m_text: "Please note: cataclysmic binary stars is a wider term than (classical)
+    novae.\r\n\nCataclysmic binary stars are stars which brightness increases rapidly
     and irregularly. After the sudden increase, the brightness drops back down to
     a stable level. \r\n\nThese stars consist of two components: a white dwarf primary,
     and a secondary donor star. The distance between them is so small that the white
     dwarf\u2019s gravity affects the other star, and the transfer of hydrogen-rich
     matter to the dwarf\u2019s surface becomes possible. This process is called \u201Cmatter
-    accretion\u201D. \r\n"
+    accretion\u201D. \r\n\nThere are several categories of cataclysmic variables,
+    depending on the outbursts\u2019 magnitudes and frequency (they may reoccur or
+    happen only once). For example, Recurrent novae\u2019s outbursts repeat every
+    10 to 80 years, and the outbursts of the classical novae can be observed only
+    once. Example categories of this type of stars are: supernovae, novae, recurrent
+    novae, dwarf novae, luminous red novae.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9231c7e77f956d24991b2b802da33ed8, type: 2}
   m_sharedMaterial: {fileID: -3049571641405915607, guid: 9231c7e77f956d24991b2b802da33ed8, type: 2}
@@ -3130,6 +3699,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380096160}
+  m_CullTransparentMesh: 1
+--- !u!1 &1402762934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402762935}
+  - component: {fileID: 1402762937}
+  - component: {fileID: 1402762936}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1402762935
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402762934}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1854882260}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1402762936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402762934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1402762937
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402762934}
   m_CullTransparentMesh: 1
 --- !u!1 &1439913850
 GameObject:
@@ -3628,8 +4273,19 @@ MonoBehaviour:
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
   name_this: Novae
-  description_this: Test
-  sprite: {fileID: 21300000, guid: 34ac03b60c9b3b74aa22e9f3b670f53e, type: 3}
+  description_this: "Novae are variable stars which show outbursts caused by thermonuclear
+    burst processes in their surface layers, as opposed to supernovae (such outbursts
+    are located deep in their interiors). To the human eye, the sudden, dramatic
+    appearance of a new source of bright light seems just as if a new star has been
+    created. This, however, is not entirely true \u2013 classical novae may occur
+    only if there is a progenitor binary system. They do not appear \u201Cout of
+    nowhere\u201D. Such systems consist of a \u201Cnormal\u201D star and a white
+    dwarf, which starts drawing accreted matter from its companion star (once they
+    are close enough for this process to begin). Hydrogen fusion on a white dwarf\u2019s
+    surface layer is the cause of the bright outbursts, and can happen for as long
+    as fresh fuel is accreted.\r\n\nNovae\u2019s brightness becomes gradually less
+    intense, and fades slowly over the course of a couple of weeks or months.\r"
+  sprite: {fileID: 21300000, guid: 9e8c4a6f74ebb85499565a230b805fa2, type: 3}
   first: 0
 --- !u!1 &1622868655
 GameObject:
@@ -3953,9 +4609,17 @@ MonoBehaviour:
   name: {fileID: 2003535020}
   description: {fileID: 1329004581}
   image: {fileID: 1278295727}
-  name_this: 
-  description_this: 
-  sprite: {fileID: 0}
+  name_this: Spectroscopic Binary
+  description_this: Spectroscopic binary stars are binary systems which can be detected
+    by spectroscopy (an indirect detection method). The Doppler effect on the emitted
+    light (the change in a wave frequency in relation to an observer, who is moving
+    relative to the wave source) is the only evidence of this type of binary stars.
+    By observing the spectral lines in the light emitted by each star, it can be
+    easily seen that at first they shift towards the blue, as the two stars move
+    towards us (the observer), and then towards the red, as they move away from us.
+    Most of the spectroscopic binaries cannot be detected even with telescopes of
+    the highest existing resolving power.
+  sprite: {fileID: 21300000, guid: 835a948468cd2e840976922f703d04b5, type: 3}
   first: 0
 --- !u!1 &1747268071
 GameObject:
@@ -4080,6 +4744,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851724607}
   m_CullTransparentMesh: 1
+--- !u!1 &1854882259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1854882260}
+  m_Layer: 5
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1854882260
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854882259}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1402762935}
+  m_Father: {fileID: 436804574}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1874779445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4485,18 +5186,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003535018}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 296930421}
-  m_RootOrder: 2
+  m_Father: {fileID: 1124660629}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 379, y: 432}
-  m_SizeDelta: {x: 1048.0549, y: 120.3196}
+  m_AnchoredPosition: {x: 0.0068969727, y: 827.10645}
+  m_SizeDelta: {x: 1183, y: 120.3196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003535020
 MonoBehaviour:
@@ -4552,7 +5253,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 2
@@ -4663,6 +5364,97 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2099255797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099255798}
+  - component: {fileID: 2099255801}
+  - component: {fileID: 2099255800}
+  - component: {fileID: 2099255799}
+  m_Layer: 5
+  m_Name: Viewport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2099255798
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099255797}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1124660629}
+  m_Father: {fileID: 1017138409}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &2099255799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099255797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
+--- !u!114 &2099255800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099255797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2099255801
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099255797}
+  m_CullTransparentMesh: 1
 --- !u!1 &2137250235
 GameObject:
   m_ObjectHideFlags: 0
