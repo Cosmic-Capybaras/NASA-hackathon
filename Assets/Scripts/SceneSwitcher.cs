@@ -27,6 +27,16 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
 
     }
+    public void duelgame()
+    {
+        SceneManager.LoadScene("Duel");
+
+    }
+    public void botgame()
+    {
+        SceneManager.LoadScene("Bot");
+
+    }
 
     public void quitGame()
     {
