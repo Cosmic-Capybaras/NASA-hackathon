@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeSlider: {fileID: 1515609343}
-  timeText: {fileID: 1934798132}
+  timeText: {fileID: 1092748986}
   speedSlowBtn: {fileID: 581371287}
   speedNormalBtn: {fileID: 1147800669}
   speedFastBtn: {fileID: 1397876652}
