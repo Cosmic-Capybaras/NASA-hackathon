@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json.Linq;
+using System.Threading;
 
 public class DuelBrainScript : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class DuelBrainScript : MonoBehaviour
         int minutes = time / 60000;
         int seconds = (time % 60000) / 1000;
         // update time text
-        timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + "." + (time % 1000).ToString("000");
+        timeText.text = minutes.ToString("00") + ":" + seconds.ToString("00") + "." + Mathf.Round((time % 1000) / 100);
     }
     private void GenerateStars(int amount)
     {
@@ -150,26 +151,13 @@ public class DuelBrainScript : MonoBehaviour
             player1Time = (int)(Time.time * 1000) - startTime;
             player1Correct = correct;
             player.text = "PLAYER 2";
-            panel.SetActive(true);
-            foreach (GameObject star in GameObject.FindGameObjectsWithTag("Star"))
-            {
-                star.GetComponent<StarScript>().UpdateBrightness(0);
-                star.transform.Find("Description").gameObject.SetActive(false);
-            }
+            StartCoroutine(Round2());
         }
         else
         {
             player2Time = (int)(Time.time * 1000) - startTime;
             player2Correct = correct;
-            score.SetActive(true);
-            // convert time to minutes and seconds
-            int minutes1 = player1Time / 60000;
-            int seconds1 = (player1Time % 60000) / 1000;
-            string time1 = minutes1.ToString("00") + ":" + seconds1.ToString("00") + "." + (player1Time % 1000).ToString("000");
-            int minutes2 = player2Time / 60000;
-            int seconds2 = (player2Time % 60000) / 1000;
-            string time2 = minutes2.ToString("00") + ":" + seconds2.ToString("00") + "." + (player2Time % 1000).ToString("000");
-            scoreText.text = "Player 1: " + player1Correct + "/5 - " + time1 + "\nPlayer 2: " + player2Correct + "/5 - " + time2;
+            StartCoroutine(ShowResults());
         }
         
     }
@@ -180,5 +168,32 @@ public class DuelBrainScript : MonoBehaviour
         startTime = (int)Time.time * 1000;
         panel.SetActive(false);
         countTime = true;
+    }
+    
+    IEnumerator Round2()
+    {
+        // wait 1 second
+        yield return new WaitForSeconds(1);
+        panel.SetActive(true);
+        foreach (GameObject star in GameObject.FindGameObjectsWithTag("Star"))
+        {
+            star.GetComponent<StarScript>().UpdateBrightness(0);
+            star.transform.Find("Description").gameObject.SetActive(false);
+        }
+    }
+    IEnumerator ShowResults()
+    {
+        // wait 1 second
+        yield return new WaitForSeconds(1);
+        score.SetActive(true);
+        // convert time to minutes and seconds
+        int minutes1 = player1Time / 60000;
+        int seconds1 = (player1Time % 60000) / 1000;
+        string time1 = minutes1.ToString("00") + ":" + seconds1.ToString("00") + "." + (player1Time % 1000).ToString("000");
+        int minutes2 = player2Time / 60000;
+        int seconds2 = (player2Time % 60000) / 1000;
+        string time2 = minutes2.ToString("00") + ":" + seconds2.ToString("00") + "." + (player2Time % 1000).ToString("000");
+        scoreText.text = "Player 1: " + player1Correct + "/5 - " + time1 + "\nPlayer 2: " + player2Correct + "/5 - " + time2;
+
     }
 }
